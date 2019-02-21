@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CHUOLU</title>
+    <base href="./">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+<link rel="stylesheet" href="styles.368069f4a08cd44d6069.css"></head>
+
+<body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <app-root></app-root>
+ 
+    <script>
+        // Add scrollspy to <body>
+        $(document).ready(function () {
+            var scrollLink = $('.scroll');
+            scrollLink.click(function(e){
+                e.preventDefault();
+                $('body,html').animate({
+                    scrollTop : $(this.hash).offset().top
+                },1000);
+            });
+
+            //Active link switching
+            $(window).scroll(function(){
+                var scrollBarLocation = $(this).scrollTop();
+                scrollLink.each(function(){
+                    var sectionOffset = $(this.hash).offset().top
+                    if (sectionOffset <= scrollBarLocation) {
+                        $(this).parent().addClass('active');
+                        $(this).parent().siblings().removeClass('active');
+                    }
+                })
+            })
+            
+        });
+    </script>
+<script type="text/javascript" src="runtime.ec2944dd8b20ec099bf3.js"></script><script type="text/javascript" src="polyfills.c6871e56cb80756a5498.js"></script><script type="text/javascript" src="scripts.252a4d8290fca0bd24f9.js"></script><script type="text/javascript" src="main.743767214d7b081701cb.js"></script></body>
+
+</html>
